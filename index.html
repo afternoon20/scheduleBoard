@@ -32,13 +32,13 @@
     </header>
     <div class="container">
       <!-- 予約ボタン -->
-      <button type="button" class="btn btn-danger shadow" data-toggle="modal" data-target="#exampleModal" id="register">
+      <button type="button" class="btn btn-danger shadow px-4" data-toggle="modal" data-target="#exampleModal" id="register">
         <!-- <svg class="mb-1" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-clock" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm8-7A8 8 0 1 1 0 8a8 8 0 0 1 16 0z" />
           <path fill-rule="evenodd" d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z" />
         </svg> -->
-        <i class="fas fa-plus"></i>
-        予約する
+        <i class="fas fa-plus mr-2"></i>
+        予約
       </button>
 
       <!-- スケジュール予約 -->
@@ -70,7 +70,7 @@
 
                 <!-- 内容 -->
                 <div class="form-group row">
-                  <label for="content" class="col-sm-2 col-form-label">日付</label>
+                  <label for="content" class="col-sm-2 col-form-label">内容</label>
                   <div class="col-sm-10">
                     <textarea class="form-control-plaintext border rounded" name="content" id="content" cols="2" rows="2"></textarea>
                   </div>
@@ -78,7 +78,7 @@
 
                 <!-- 日付 -->
                 <div class="form-group row">
-                  <label for="date" class="col-sm-2 col-form-label">内容</label>
+                  <label for="date" class="col-sm-2 col-form-label">日付</label>
                   <div class="col-sm-10"><input type="date" class="form-control-plaintext border rounded" id="date" value="" /></div>
                 </div>
                 <!-- 連続した期間 -->
@@ -126,7 +126,7 @@
                 <!-- 時間選択 -->
 
                 <div class="row mt-5">
-                  <label class="col-2 mt-1" for="times">時間</label>
+                  <label class="col-sm-2 mt-1" for="times">時間</label>
                   <div class="col">
                     <input class="form-control start-time" id="start-time" list="start-time-list" />
                     <datalist id="start-time-list"> </datalist>

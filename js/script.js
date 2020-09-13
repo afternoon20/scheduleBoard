@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
       right: 'resourceTimelineDay,resourceTimelineWeek,resourceTimelineMonth',
     },
     editable: true,
-
     titleFormat: { year: 'numeric', month: 'short', day: 'numeric' },
 
     resourceAreaHeaderContent: '名前',
