@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- bootstrap4 -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- timeline view -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.3.1/main.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Font Awesome -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>スケジュールボード | ルーツ</title>
+  </head>
+  <body>
+    <header class="header bg-light mb-5">
+      <div class="container">
+        <nav class="navbar navbar-expand">
+          <a class="navbar-brand" href="#"><img src="" alt="ShceduleBoard" class="header-logo" /></a>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <button type="button" class="btn mr-3 text-primary">管理画面</button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-secondary mr-4">ログアウト</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <!-- 予約ボタン -->
+      <button type="button" class="btn btn-danger shadow" data-toggle="modal" data-target="#exampleModal" id="register">
+        <svg class="mb-1" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-clock" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm8-7A8 8 0 1 1 0 8a8 8 0 0 1 16 0z" />
+          <path fill-rule="evenodd" d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z" />
+        </svg>
+        予約する
+      </button>
+
+      <!-- スケジュール予約 -->
+      <div class="modal fade shadow" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">スケジュール予約</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <!-- 予約内容 -->
+            <div class="modal-body">
+              <p class="text-danger">※スケジュールを直接ドラッグしたほうが予約しやすいです。</p>
+              <form>
+                <!-- 予約者 -->
+                <div class="form-group row">
+                  <label class="mt-2 col-sm-2" for="person">予約者</label>
+                  <div class="col-sm-10">
+                    <select class="form-control" id="person">
+                      <option selected>選択して下さい...</option>
+                      <option value="001">田中太郎</option>
+                      <option value="002">山田花子</option>
+                      <option value="003">サンプル太郎</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- 内容 -->
+                <div class="form-group row">
+                  <label for="content" class="col-sm-2 col-form-label">日付</label>
+                  <div class="col-sm-10">
+                    <textarea class="form-control-plaintext border rounded" name="content" id="content" cols="2" rows="2"></textarea>
+                  </div>
+                </div>
+
+                <!-- 日付 -->
+                <div class="form-group row">
+                  <label for="date" class="col-sm-2 col-form-label">内容</label>
+                  <div class="col-sm-10"><input type="date" class="form-control-plaintext border rounded" id="date" value="" /></div>
+                </div>
+                <!-- 連続した期間 -->
+                <div class="form-group form-check mt-4">
+                  <input type="checkbox" class="form-check-input" id="term" />
+                  <label class="form-check-label" for="term-check">連続した期間で予約する</label>
+                </div>
+                <div class="form-group row">
+                  <label for="date" class="col-sm-2 col-form-label">開始日</label>
+                  <div class="col-sm-10"><input type="date" class="form-control-plaintext border rounded week" id="start-date" value="" /></div>
+                </div>
+                <div class="form-group row">
+                  <label for="date" class="col-sm-2 col-form-label">終了日</label>
+                  <div class="col-sm-10"><input type="date" class="form-control-plaintext border rounded week" id="end-date" value="" /></div>
+                </div>
+                <!-- 曜日選択 -->
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input week" type="checkbox" id="sun" value="0" />
+                  <label class="form-check-label text-danger" for="inlineCheckbox1">日</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input week" type="checkbox" id="mon" value="1" />
+                  <label class="form-check-label" for="inlineCheckbox2">月</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input week" type="checkbox" id="tue" value="3" />
+                  <label class="form-check-label" for="inlineCheckbox3">火</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input week" type="checkbox" id="wen" value="4" />
+                  <label class="form-check-label" for="inlineCheckbox1">水</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input week" type="checkbox" id="thu" value="5" />
+                  <label class="form-check-label" for="inlineCheckbox2">木</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input week" type="checkbox" id="fry" value="6" />
+                  <label class="form-check-label" for="inlineCheckbox3">金</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input week" type="checkbox" id="sat" value="6" />
+                  <label class="form-check-label text-primary" for="inlineCheckbox3">土</label>
+                </div>
+                <!-- 時間選択 -->
+
+                <div class="row mt-5">
+                  <label class="col-2 mt-1" for="times">時間</label>
+                  <div class="col">
+                    <input class="form-control start-time" id="start-time" list="start-time-list" />
+                    <datalist id="start-time-list"> </datalist>
+                  </div>
+                  <div class="col">
+                    <input list="end-time-list" class="form-control" id="end-time" />
+                    <datalist id="end-time-list"></datalist>
+                  </div>
+                </div>
+                <div class="ml-auto">
+                  <input type="submit" value="予約" class="mt-5 btn btn-block btn-primary" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main id="main">
+      <div class="container my-5">
+        <!-- Tabs -->
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a href="#tab1" class="nav-link active" data-toggle="tab">スケジュール</a>
+          </li>
+          <li class="nav-item">
+            <a href="#tab2" class="nav-link" data-toggle="tab">座席表</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a href="#tab3" class="nav-link" data-toggle="tab">タブ3</a>
+          </li>
+          <li class="nav-item">
+            <a href="#tab4" class="nav-link" data-toggle="tab">タブ4</a>
+          </li> -->
+        </ul>
+        <!-- コンテンツ部分 -->
+        <div class="tab-content">
+          <div id="tab1" class="tab-pane active">
+            <div class="my-5">
+              <div id="calendar"></div>
+            </div>
+          </div>
+          <div id="tab2" class="tab-pane">
+            <div class="my-5">ここはまだ</div>
+          </div>
+          <!-- <div id="tab3" class="tab-pane">
+            <img src="images/photo3.jpg" class="img-fluid" alt="" />
+          </div>
+          <div id="tab4" class="tab-pane">
+            <img src="images/photo4.jpg" class="img-fluid" alt="" />
+          </div> -->
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer text-center bg-light">
+      <div class="py-3">
+        <span>Copyright <small>&copy;</small> 2020 Kyosuke Shimada All Rights Reserved.</span>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- bootstrap4 -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- fullcalendar -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.3.1/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.3.1/locales/ja.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

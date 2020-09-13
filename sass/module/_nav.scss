@@ -1,0 +1,5 @@
+.navbar-nav {
+  @include mq('sp') {
+    display: none;
+  }
+}

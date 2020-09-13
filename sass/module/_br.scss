@@ -1,0 +1,15 @@
+.br-sp {
+  display: none;
+
+  @include mq("sp") {
+    display: inline;
+  }
+}
+
+.br-tab {
+  display: none;
+
+  @include mq("tab") {
+    display: inline;
+  }
+}
