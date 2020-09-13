@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
     timeZone: 'Asia/Tokyo',
-    lang: 'ja',
+    locale: 'ja',
     initialView: 'resourceTimelineDay',
     aspectRatio: 1.5,
     headerToolbar: {
@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
       right: 'resourceTimelineDay,resourceTimelineWeek,resourceTimelineMonth',
     },
     editable: true,
+
+    titleFormat: { year: 'numeric', month: 'short', day: 'numeric' },
 
     resourceAreaHeaderContent: '名前',
     resources: 'https://fullcalendar.io/demo-resources.json?with-nesting&with-colors',
