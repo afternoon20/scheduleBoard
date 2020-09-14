@@ -1,0 +1,73 @@
+.fc-license-message {
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
+  .fc-header-toolbar {
+    align-items: flex-start !important;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .fc-header-toolbar .fc-toolbar-chunk {
+    margin-bottom: 16px;
+  }
+  .fc-header-toolbar .fc-toolbar-chunk:nth-child(1) {
+    margin-bottom: 0;
+    order: 3;
+  }
+  .fc-header-toolbar .fc-toolbar-chunk:nth-child(2) {
+    order: 1;
+  }
+  .fc-header-toolbar .fc-toolbar-chunk:nth-child(3) {
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .fc-view-harness {
+    height: 400px !important;
+  }
+}
+
+.br-sp {
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
+  .br-sp {
+    display: inline;
+  }
+}
+
+.br-tab {
+  display: none;
+}
+
+@media screen and (max-width: 1015px) {
+  .br-tab {
+    display: inline;
+  }
+}
+
+.start-time {
+  position: relative;
+}
+
+.start-time:after {
+  background-color: red;
+  content: 'aaaaaaaa';
+  height: 250px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 250px;
+  z-index: 99;
+}
+
+@media screen and (max-width: 576px) {
+  .navbar-nav {
+    display: none;
+  }
+}

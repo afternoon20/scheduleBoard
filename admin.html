@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- bootstrap4 -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- timeline view -->
+    <link rel="stylesheet" href="./css/main.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Font Awesome -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>スケジュールボード | ルーツ</title>
+  </head>
+  <body>
+    <header class="header bg-light mb-5 shadow-sm">
+      <div class="container">
+        <nav class="navbar navbar-expand">
+          <a class="navbar-brand" href="index.html"><img src="" alt="ShceduleBoard" class="header-logo" /></a>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <button type="button" class="btn btn-primary mr-3">管理画面</button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-secondary">ログアウト</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <a class="btn btn-danger shadow px-3" href="register.html">
+        <!-- <svg class="mb-1" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-clock" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm8-7A8 8 0 1 1 0 8a8 8 0 0 1 16 0z" />
+          <path fill-rule="evenodd" d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z" />
+        </svg> -->
+        <i class="fas fa-plus mr-2"></i>
+        新規追加
+      </a>
+    </div>
+    <main>
+      <div class="container my-5">
+        <div class="float-right">
+          <form class="form-inline">
+            <input type="text" class="form-control mb-2 mr-2 w-auto" placeholder="従業員を検索する" />
+            <input type="submit" class="btn btn-primary mb-2" value="検索" />
+          </form>
+        </div>
+        <div class="table-responsive-sm">
+          <table class="table table-bordered table-sm">
+            <thead>
+              <tr class="table-secondary">
+                <th>名前</th>
+                <th>雇用形態</th>
+                <th>所属</th>
+                <th class=""></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>田中太郎</td>
+                <td>正社員</td>
+                <td>明安</td>
+                <td>
+                  <a class="mr-2" href="register.html"><i class="fas fa-edit"></i></a>
+                  <a class="text-secondary" href="delete.html"><i class="far fa-trash-alt"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>田中太郎</td>
+                <td>正社員</td>
+                <td>明安</td>
+                <td>
+                  <a class="mr-2" href="register.html"><i class="fas fa-edit"></i></a>
+                  <a class="text-secondary" href="delete.html"><i class="far fa-trash-alt"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>田中太郎</td>
+                <td>正社員</td>
+                <td>明安</td>
+                <td>
+                  <a class="mr-2" href="register.html"><i class="fas fa-edit"></i></a>
+                  <a class="text-secondary" href="delete.html"><i class="far fa-trash-alt"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>田中太郎</td>
+                <td>正社員</td>
+                <td>明安</td>
+                <td>
+                  <a class="mr-2" href="register.html"><i class="fas fa-edit"></i></a>
+                  <a class="text-secondary" href="delete.html"><i class="far fa-trash-alt"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- 予約ボタン -->
+    </main>
+
+    <footer class="footer text-center bg-light">
+      <div class="py-3">
+        <span>Copyright <small>&copy;</small> 2020 Kyosuke Shimada All Rights Reserved.</span>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- bootstrap4 -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- fullcalendar -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.3.1/main.min.js"></script> -->
+    <script src="js/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.3.1/locales/ja.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
